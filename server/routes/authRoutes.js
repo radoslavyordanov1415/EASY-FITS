@@ -54,8 +54,8 @@ router.post('/login', async (req, res) => {
 
 // Logout route
 router.post('/logout', (req, res) => {
-
-
+    res.cookie('token', '', { maxAge: 0 });
+    res.status(200).json({ message: 'User logged out successfully.' });
 });
 
 // Status check route 
