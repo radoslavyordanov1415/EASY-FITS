@@ -96,7 +96,18 @@ router.post('/logout', (req, res) => {
 
 // Status check route 
 router.get('/status', (req, res) => {
+    const token = req.cookies.token;
 
+    if (!token) {
+        return res.json({ isLoggedIn: false });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verify the JWT token
+        return res.json({ isLoggedIn: true, userId: decoded.userId, username: decoded.username });
+    } catch (err) {
+        return res.json({ isLoggedIn: false });
+    }
 });
 
 export default router;

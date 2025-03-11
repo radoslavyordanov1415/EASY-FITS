@@ -1,9 +1,7 @@
+import { createRoot } from 'react-dom/client';
+import App from './App';
 
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-
-createRoot(document.getElementById('root')).render(
-
+const root = createRoot(document.getElementById('root')); // Correct use of createRoot
+root.render(
   <App />
-
-)
+);

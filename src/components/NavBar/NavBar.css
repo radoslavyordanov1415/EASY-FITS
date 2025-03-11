@@ -33,34 +33,7 @@
     margin-right: 60px;
 }
 
-.navbar a {
-    position: relative;
-    font-size: 18px;
-    color: aliceblue;
-    font-weight: 400;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.navbar a:hover {
-    transform: scale(0.9);
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #a11f1f;
-    transition: width .3s ease;
-}
-
-.navbar a:hover::before {
-    width: 100%;
-}
-
+.navbar a,
 .logout-btn {
     position: relative;
     font-size: 18px;
@@ -73,11 +46,15 @@
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.navbar a:hover,
 .logout-btn:hover {
+
     transform: scale(0.9);
 }
 
+.navbar a::before,
 .logout-btn::before {
+
     content: '';
     position: absolute;
     bottom: 0;
@@ -88,10 +65,11 @@
     transition: width 0.3s ease;
 }
 
+.navbar a:hover::before,
 .logout-btn:hover::before {
+
     width: 100%;
 }
-
 
 @media (max-width: 768px) {
     .navbar {
